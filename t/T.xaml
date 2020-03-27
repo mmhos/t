@@ -5,9 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="t.T">
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout>
-            <Button HorizontalOptions="Center" VerticalOptions="Center" Text="Click measdsas" Clicked="Button_Clicked" ></Button>
+            --><!--<Button HorizontalOptions="Center" VerticalOptions="Center" Text="Click measdsas" Clicked="Button_Clicked" ></Button>--><!--
+        
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
+    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Muhahha "></Label>
 </ContentPage>
