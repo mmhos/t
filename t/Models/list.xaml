@@ -7,12 +7,28 @@
              x:Class="t.Models.list">
     <ContentPage.Content>
         
-            <ListView x:Name="itemList" SeparatorColor="Black" SeparatorVisibility="Default">
+            <ListView x:Name="itemList" SeparatorColor="Black" HasUnevenRows="True"
+                ItemTapped="itemList_ItemTapped" 
+                 ItemSelected="itemList_ItemSelected"
+                      
+                      >
 
             <ListView.ItemTemplate>
                 <DataTemplate>
+                    <ViewCell>
 
-                    <TextCell Text="{Binding Name}" Detail ="{Binding Id}"/>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="Silver">
+
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Id}" TextColor="Gray"/>
+
+                            </StackLayout>
+                            <Button Text="Delete"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <!--<TextCell Text="{Binding Name}" Detail ="{Binding Id}"/>-->
                 </DataTemplate>
                 
                 

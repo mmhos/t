@@ -27,5 +27,18 @@ namespace t.Models
             };
             itemList.ItemsSource = items;
         }
+
+        private void itemList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var aitem = e.Item as Item;
+
+            DisplayAlert("Tapped", aitem.Name, "OK");
+        }
+
+        private void itemList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var aitem = e.SelectedItem as Item;
+            DisplayAlert("Selected", aitem.Name, "OK");
+        }
     }
 }
