@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="t.Sp">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Yellow"
+                     VerticalOptions="Center"
+                     Orientation="Horizontal"
+                     Spacing="20"
+                     Padding="40">
+            <Label>Text = "Label 1 "</Label>
+            <Label>Text = "Label 2"</Label>
+            <Label>Text = "Label 3"</Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

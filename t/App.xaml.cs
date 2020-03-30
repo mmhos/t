@@ -10,7 +10,7 @@ namespace t
         {
             InitializeComponent();
 
-            MainPage = new T();
+            MainPage = new Models.list();
         }
 
         protected override void OnStart()
