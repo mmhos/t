@@ -6,8 +6,19 @@
              mc:Ignorable="d"
              x:Class="t.Models.list">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="itemList"></ListView>
-        </StackLayout>
+        
+            <ListView x:Name="itemList" SeparatorColor="Black" SeparatorVisibility="Default">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <TextCell Text="{Binding Name}" Detail ="{Binding Id}"/>
+                </DataTemplate>
+                
+                
+            </ListView.ItemTemplate>
+                
+            </ListView>
+        
     </ContentPage.Content>
 </ContentPage>

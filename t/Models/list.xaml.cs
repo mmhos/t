@@ -15,12 +15,13 @@ namespace t.Models
         public list()
         {
             InitializeComponent();
-            var items = new List<String>
+            var items = new List<Item>
             {
-                "Monitors",
-                "Controlllers",
-                "Displays"
-                
+                new Item { Name = "Display" ,Id =1},
+                new Item { Name = "Controller" ,Id =1},
+                new Item { Name = "Router" ,Id =1},
+
+
 
 
             };
