@@ -40,5 +40,15 @@ namespace t.Models
             var aitem = e.SelectedItem as Item;
             DisplayAlert("Selected", aitem.Name, "OK");
         }
+
+        private void Call_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

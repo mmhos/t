@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oX2cLx4YyLCHGt8OI12qDwXn+DfxtXLkE016hSC6uyO0aStIa7N9rwQZFjIp5uffLuu3H7/S/7P40FQOsLwIIA==",
+  "dgSpecHash": "s5UFSVNebCp6ZuOKWytBzfnb4+tBq6X2esD7XU9p3kmdh2dkZtJ3Il9YDBe71ErQu21X8uZCn6PN+gWMIiVbMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\solari-1\\source\\repos\\t\\t.UWP\\t.UWP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\solari-1\\.nuget\\packages\\freshmvvm\\3.0.0\\freshmvvm.3.0.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\microsoft.net.native.compiler\\2.1.8\\microsoft.net.native.compiler.2.1.8.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.1.2\\microsoft.net.uwpcoreruntimesdk.2.1.2.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
@@ -26,6 +27,7 @@
     "C:\\Users\\solari-1\\.nuget\\packages\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\\2.1.2\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.1.2.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\\6.1.9\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.1.9.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\solari-1\\.nuget\\packages\\system.reactive\\4.0.0\\system.reactive.4.0.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\win2d.uwp\\1.20.0\\win2d.uwp.1.20.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",

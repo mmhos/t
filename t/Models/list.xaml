@@ -15,7 +15,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <!--<ViewCell>
 
                         <StackLayout Orientation="Horizontal" BackgroundColor="Silver">
 
@@ -26,9 +26,17 @@
                             </StackLayout>
                             <Button Text="Delete"/>
                         </StackLayout>
-                    </ViewCell>
+                    </ViewCell>-->
 
-                    <!--<TextCell Text="{Binding Name}" Detail ="{Binding Id}"/>-->
+                    <TextCell Text="{Binding Name}" Detail ="{Binding Id}">
+                        <TextCell.ContextActions>
+
+                            <MenuItem Text="Call" Clicked="Call_Clicked"/>
+                            <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True"/>
+                        </TextCell.ContextActions>
+
+
+                    </TextCell>
                 </DataTemplate>
                 
                 

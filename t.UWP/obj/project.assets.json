@@ -2,6 +2,21 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.16299": {
+      "FreshMvvm/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.0.0",
+          "Xamarin.Forms": "3.4.0.1009999"
+        },
+        "compile": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -306,6 +321,18 @@
           "lib/uap10.0.16299/_._": {}
         }
       },
+      "System.Reactive/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        }
+      },
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
@@ -381,6 +408,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FreshMvvm": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
         },
@@ -393,6 +421,21 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm": {
+      "FreshMvvm/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.0.0",
+          "Xamarin.Forms": "3.4.0.1009999"
+        },
+        "compile": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -872,6 +915,18 @@
           "lib/uap10.0.16299/_._": {}
         }
       },
+      "System.Reactive/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        }
+      },
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
@@ -936,6 +991,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FreshMvvm": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
         },
@@ -948,6 +1004,21 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm-aot": {
+      "FreshMvvm/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.0.0",
+          "Xamarin.Forms": "3.4.0.1009999"
+        },
+        "compile": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -1428,6 +1499,18 @@
           "lib/uap10.0.16299/_._": {}
         }
       },
+      "System.Reactive/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        }
+      },
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
@@ -1492,6 +1575,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FreshMvvm": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
         },
@@ -1504,6 +1588,21 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm64-aot": {
+      "FreshMvvm/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.0.0",
+          "Xamarin.Forms": "3.4.0.1009999"
+        },
+        "compile": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -1808,6 +1907,18 @@
           "lib/uap10.0.16299/_._": {}
         }
       },
+      "System.Reactive/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        }
+      },
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
@@ -1869,6 +1980,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FreshMvvm": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
         },
@@ -1881,6 +1993,21 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64": {
+      "FreshMvvm/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.0.0",
+          "Xamarin.Forms": "3.4.0.1009999"
+        },
+        "compile": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -2360,6 +2487,18 @@
           "lib/uap10.0.16299/_._": {}
         }
       },
+      "System.Reactive/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        }
+      },
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
@@ -2424,6 +2563,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FreshMvvm": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
         },
@@ -2436,6 +2576,21 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64-aot": {
+      "FreshMvvm/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.0.0",
+          "Xamarin.Forms": "3.4.0.1009999"
+        },
+        "compile": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -2916,6 +3071,18 @@
           "lib/uap10.0.16299/_._": {}
         }
       },
+      "System.Reactive/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        }
+      },
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
@@ -2980,6 +3147,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FreshMvvm": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
         },
@@ -2992,6 +3160,21 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86": {
+      "FreshMvvm/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.0.0",
+          "Xamarin.Forms": "3.4.0.1009999"
+        },
+        "compile": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -3471,6 +3654,18 @@
           "lib/uap10.0.16299/_._": {}
         }
       },
+      "System.Reactive/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        }
+      },
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
@@ -3535,6 +3730,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FreshMvvm": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
         },
@@ -3547,6 +3743,21 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86-aot": {
+      "FreshMvvm/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.0.0",
+          "Xamarin.Forms": "3.4.0.1009999"
+        },
+        "compile": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreshIOC.dll": {},
+          "lib/netstandard2.0/FreshMvvm.dll": {}
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -4027,6 +4238,18 @@
           "lib/uap10.0.16299/_._": {}
         }
       },
+      "System.Reactive/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/System.Reactive.dll": {}
+        }
+      },
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
@@ -4091,6 +4314,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FreshMvvm": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
         },
@@ -4104,6 +4328,21 @@
     }
   },
   "libraries": {
+    "FreshMvvm/3.0.0": {
+      "sha512": "/XDZFT3hQP7Vbz44BJYkeWgPIDUenA2KHxROV95syRcARH/5r//Upx+Z6MVXcAioW9KvTOivrBvU+Q47Wy7Arg==",
+      "type": "package",
+      "path": "freshmvvm/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "freshmvvm.3.0.0.nupkg.sha512",
+        "freshmvvm.nuspec",
+        "lib/netstandard2.0/FreshIOC.dll",
+        "lib/netstandard2.0/FreshIOC.pdb",
+        "lib/netstandard2.0/FreshMvvm.dll",
+        "lib/netstandard2.0/FreshMvvm.pdb"
+      ]
+    },
     "Microsoft.Net.Native.Compiler/2.1.8": {
       "sha512": "7836QmE441s7vynQ4M3clWsbZIn3kzM9OqxZfhPTFTpqntHT5qt/T/2Qcg6gO+xlYqfCqaBq6TN0doGn2Ggc2Q==",
       "type": "package",
@@ -7883,6 +8122,27 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Reactive/4.0.0": {
+      "sha512": "yaVAxT2Yl28p9+DupGwj2oPbIOYZUQimOQ+n7N7vML2oofIRj9BmcfD7DHc6FLrNah65EigOgG6U9VnwWEyz5g==",
+      "type": "package",
+      "path": "system.reactive/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/System.Reactive.dll",
+        "lib/net46/System.Reactive.xml",
+        "lib/netstandard2.0/System.Reactive.dll",
+        "lib/netstandard2.0/System.Reactive.xml",
+        "lib/uap10.0.16299/System.Reactive.dll",
+        "lib/uap10.0.16299/System.Reactive.pri",
+        "lib/uap10.0.16299/System.Reactive.xml",
+        "lib/uap10.0/System.Reactive.dll",
+        "lib/uap10.0/System.Reactive.pri",
+        "lib/uap10.0/System.Reactive.xml",
+        "system.reactive.4.0.0.nupkg.sha512",
+        "system.reactive.nuspec"
       ]
     },
     "System.ValueTuple/4.5.0": {
