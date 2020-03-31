@@ -28,6 +28,12 @@
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\t.UWP.exe">
       <PackagePath>entrypoint\t.UWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\solari-1\.nuget\packages\freshmvvm\3.0.0\lib\netstandard2.0\FreshIOC.dll">
+      <PackagePath>FreshIOC.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\solari-1\.nuget\packages\freshmvvm\3.0.0\lib\netstandard2.0\FreshMvvm.dll">
+      <PackagePath>FreshMvvm.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
     </AppxPackagedFile>
@@ -519,6 +525,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\lib\uap10.0.15138\netstandard.dll">
       <PackagePath>netstandard.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\solari-1\.nuget\packages\system.reactive\4.0.0\lib\uap10.0.16299\System.Reactive.dll">
+      <PackagePath>System.Reactive.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>

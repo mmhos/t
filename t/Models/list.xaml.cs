@@ -43,6 +43,9 @@ namespace t.Models
 
         private void Call_Clicked(object sender, EventArgs e)
         {
+            var mItem = sender as MenuItem;
+           var aitem =  mItem.CommandParameter as Item;
+           DisplayAlert("Call", aitem.Name, "OK");
 
         }
 

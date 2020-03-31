@@ -6,12 +6,12 @@
              mc:Ignorable="d"
              x:Class="t.Models.list">
     <ContentPage.Content>
-        
-            <ListView x:Name="itemList" SeparatorColor="Black" HasUnevenRows="True"
-                ItemTapped="itemList_ItemTapped" 
-                 ItemSelected="itemList_ItemSelected"
+
+        <ListView x:Name="itemList" SeparatorColor="Black" HasUnevenRows="True">
+            <!--ItemTapped="itemList_ItemTapped" 
+                 ItemSelected="itemList_ItemSelected"-->
                       
-                      >
+                      
 
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -27,16 +27,18 @@
                             <Button Text="Delete"/>
                         </StackLayout>
                     </ViewCell>-->
-
-                    <TextCell Text="{Binding Name}" Detail ="{Binding Id}">
+                    <!--<StackLayout Orientation="Horizontal" BackgroundColor="Silver">-->
+                        <TextCell Text="{Binding Name}" Detail ="{Binding Id}">
+                        
                         <TextCell.ContextActions>
 
-                            <MenuItem Text="Call" Clicked="Call_Clicked"/>
-                            <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True"/>
+                            <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Delete" Clicked="Delete_Clicked" CommandParameter="{Binding .}"  IsDestructive="True"/>
                         </TextCell.ContextActions>
 
-
+                        
                     </TextCell>
+                    <!--</StackLayout>-->
                 </DataTemplate>
                 
                 

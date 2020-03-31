@@ -720,7 +720,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t\bin\Debug\netstandard2.0\t.dll">
       <PackagePath>t.dll</PackagePath>
-      <Modified>2020-03-30T21:34:36.219</Modified>
+      <Modified>2020-03-31T19:43:02.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>

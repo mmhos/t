@@ -12,6 +12,5 @@ C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\t.pdb
 C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\t.xaml.g.cs
 C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\Sp.xaml.g.cs
 C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\Models\list.xaml.g.cs
-C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\t.csprojAssemblyReference.cache
-C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\Pages\ItemListPage.xaml.g.cs
-C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\Pages\ItemPage.xaml.g.cs
+C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\t.csproj.CoreCompileInputs.cache
+C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\XamlC.stamp
