@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-01T13:51:29.385</Modified>
+      <Modified>2020-04-01T18:45:19.223</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\t.UWP.exe">
       <PackagePath>entrypoint\t.UWP.exe</PackagePath>
-      <Modified>2020-04-01T13:51:25.325</Modified>
+      <Modified>2020-04-01T18:45:14.188</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\.nuget\packages\freshmvvm\3.0.0\lib\netstandard2.0\FreshIOC.dll">
       <PackagePath>FreshIOC.dll</PackagePath>
@@ -732,7 +732,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t\bin\Debug\netstandard2.0\t.dll">
       <PackagePath>t.dll</PackagePath>
-      <Modified>2020-04-01T13:51:07.943</Modified>
+      <Modified>2020-04-01T18:49:42.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -891,15 +891,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2020-04-01T13:51:24.934</Modified>
+      <Modified>2020-04-01T18:45:13.826</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-04-01T13:51:24.935</Modified>
+      <Modified>2020-04-01T18:45:13.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-04-01T13:51:24.936</Modified>
+      <Modified>2020-04-01T18:45:13.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -919,7 +919,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\Core\t.UWP.exe">
       <PackagePath>t.UWP.exe</PackagePath>
-      <Modified>2020-04-01T13:51:29.335</Modified>
+      <Modified>2020-04-01T18:45:19.184</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
