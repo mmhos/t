@@ -191,8 +191,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "FreshMvvm": "3.0.0",
-          "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.4.0.991265"
+          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Forms": "4.5.0.495"
         },
         "compile": {
           "bin/placeholder/t.dll": {}
@@ -392,8 +392,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "FreshMvvm": "3.0.0",
-          "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.4.0.991265"
+          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Forms": "4.5.0.495"
         },
         "compile": {
           "bin/placeholder/t.dll": {}
@@ -593,8 +593,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "FreshMvvm": "3.0.0",
-          "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.4.0.991265"
+          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Forms": "4.5.0.495"
         },
         "compile": {
           "bin/placeholder/t.dll": {}
@@ -794,8 +794,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "FreshMvvm": "3.0.0",
-          "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.4.0.991265"
+          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Forms": "4.5.0.495"
         },
         "compile": {
           "bin/placeholder/t.dll": {}
@@ -1330,5 +1330,33 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Essentials from 1.5.2 to 1.3.1. Reference the package directly from the project to select a different version. \r\n t.iOS -> t -> Xamarin.Essentials (>= 1.5.2) \r\n t.iOS -> Xamarin.Essentials (>= 1.3.1)",
+      "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 4.5.0.495 to 4.4.0.991265. Reference the package directly from the project to select a different version. \r\n t.iOS -> t -> Xamarin.Forms (>= 4.5.0.495) \r\n t.iOS -> Xamarin.Forms (>= 4.4.0.991265)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }

@@ -10,7 +10,7 @@ namespace t
         {
             InitializeComponent();
 
-            MainPage = new Models.list();
+            MainPage = new UI.Item();
         }
 
         protected override void OnStart()
