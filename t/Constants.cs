@@ -2,7 +2,8 @@
 {
 	public static class Constants
 	{
-		public static string Username = "Xamarin";
-		public static string Password = "password";
+		public static string Username = "X";
+		public static string Password = "p";
+		public static int ItemNumberForDisplay = 10;
 	}
 }

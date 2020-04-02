@@ -18,21 +18,12 @@ namespace t
         public I()
         {
             InitializeComponent();
+            MySqlConnection  c = new cm.ic().conn;
 
-            MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
-            conn_string.Server = "166.62.74.162";
-            conn_string.Port = 3306;
-            conn_string.UserID = "remote";
-            conn_string.Password = "ghorar1Dim";
-            conn_string.Database = "myinvent";
-
-
-
-            MySqlConnection MyCon = new MySqlConnection(conn_string.ToString());
 
             try
             {
-                MyCon.Open();
+                c.Open();
                 lab.Text = "Open";
                 
                 ;
@@ -41,8 +32,9 @@ namespace t
             {
                 lab.Text = ex.Message;
             }
-            string query = "SELECT * FROM inventory";
-            var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, MyCon);
+
+            string query = "SELECT * FROM inventory  where id  <"+ Constants.ItemNumberForDisplay;
+            var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, c);
             var reader = cmd.ExecuteReader();
             var layout = new StackLayout();
             var button = new Button
@@ -54,8 +46,7 @@ namespace t
             
 
             
-            layout.Spacing = 10;
-            Content = layout;
+            
             var h = 0;
             //var sc = new Label { Text = "asfda" };
             while (reader.Read())
@@ -77,8 +68,8 @@ namespace t
                 layout.Children.Add(clab);
             }
             //grid.Children.Add(sc, 1, 1);
-            MyCon.Close(); 
-            layout.Spacing = 10;
+            c.Close(); 
+            layout.Spacing = 20;
             Content = layout;
             //    string serverIp = "166.62.74.162";
             //    string username = "remote";
