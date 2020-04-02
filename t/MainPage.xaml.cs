@@ -23,5 +23,13 @@ namespace t
             Navigation.InsertPageBefore(new LoginPage(), this);
             await Navigation.PopAsync();
         }
+
+         async void Button_Clicked(object sender, EventArgs e)
+        {
+
+            Navigation.InsertPageBefore(new I(), this);
+            await Navigation.PopAsync();
+
+        }
     }
 }
