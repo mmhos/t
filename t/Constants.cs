@@ -5,5 +5,7 @@
 		public static string Username = "X";
 		public static string Password = "p";
 		public static int ItemNumberForDisplay = 10;
+		public static int AttributeNumberForDisplay = 5;
+
 	}
 }

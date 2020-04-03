@@ -47,9 +47,9 @@
               "target": "Package",
               "version": "[6.2.10, )"
             },
-            "MySql.Data": {
+            "MySqlConnector": {
               "target": "Package",
-              "version": "[8.0.19, )"
+              "version": "[0.63.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -133,9 +133,9 @@
               "target": "Package",
               "version": "[3.0.0, )"
             },
-            "MySql.Data": {
+            "MySqlConnector": {
               "target": "Package",
-              "version": "[8.0.19, )"
+              "version": "[0.63.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

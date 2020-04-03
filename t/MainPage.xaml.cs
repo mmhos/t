@@ -17,17 +17,30 @@ namespace t
         {
             InitializeComponent();
         }
-        async void OnLogoutButtonClicked(object sender, EventArgs e)
+         async void OnLogoutButtonClicked(object sender, EventArgs e)
         {
             App.IsUserLoggedIn = false;
             Navigation.InsertPageBefore(new LoginPage(), this);
             await Navigation.PopAsync();
         }
-
-         async void Button_Clicked(object sender, EventArgs e)
+        async void Button_Clicked(object sender, EventArgs e)
         {
 
             Navigation.InsertPageBefore(new I(), this);
+            await Navigation.PopAsync();
+
+        }
+        async void Add_Clicked(object sender, EventArgs e)
+        {
+
+            Navigation.InsertPageBefore(new adit(), this);
+            await Navigation.PopAsync();
+
+        }
+        async void Delete_Clicked(object sender, EventArgs e)
+        {
+
+            Navigation.InsertPageBefore(new deit(), this);
             await Navigation.PopAsync();
 
         }

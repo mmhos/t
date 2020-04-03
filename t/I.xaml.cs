@@ -1,97 +1,219 @@
-﻿using MySql.Data.MySqlClient;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using System.Windows;
+using MySql.Data.MySqlClient;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using RowDefinition = Xamarin.Forms.RowDefinition;
+
 
 namespace t
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class I : ContentPage
     {
+        MySqlConnection con;
         public I()
         {
             InitializeComponent();
-            MySqlConnection  c = new cm.ic().conn;
+            //using (var connection = new MySqlConnection("Server=166.62.74.162;User ID=remote;Password=ghorar1Dim;Database=mydataba"))
+            //    //{
+            //    //    connection.Open();
+
+            //    //    using (var command = new MySqlCommand("SELECT field FROM table;", connection))
+            //    //    using (var reader = command.ExecuteReader())
+            //    //        while (reader.Read())
+            //    //            Console.WriteLine(reader.GetString(0));
+            //    //}
+                MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
+            conn_string.Server = "166.62.74.162";
+            conn_string.Port = 3306;
+            conn_string.UserID = "remote";
+            conn_string.Password = "ghorar1Dim";
+            conn_string.Database = "myinvent";
 
 
-            try
-            {
-                c.Open();
-                lab.Text = "Open";
-                
-                ;
+            //server = "localhost";
+            //database = "connectcsharptomysql";
+            //uid = "username";
+            //password = "password";
+            //string connectionString;
+            //connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            //database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            //connection = new MySqlConnection(connectionString);
+            DBConnect conn = new DBConnect();
+            //con = new MySqlConnection(conn_string.ToString());
+            
+            
+
+            
+            if (conn.OpenConnection()== true) 
+            {   
+                string query = "SELECT * FROM inventory  where id  <" + (Constants.ItemNumberForDisplay + 1);
+                var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn.connection);
+                var reader = cmd.ExecuteReader();
+                con = conn.connection;
+                var layout = new StackLayout();
+                var lbl = new Label { Text = "Change the number of item to display " };
+                var itn = new Entry { Text = Constants.ItemNumberForDisplay.ToString() };
+                itn.TextChanged += E_T;
+                layout.Children.Add(lbl);
+                layout.Children.Add(itn);
+                var lbl2 = new Label { Text = "Change the number of attributes  to display " };
+                var itn2 = new Entry { Text = Constants.AttributeNumberForDisplay.ToString() };
+                itn2.TextChanged += E_Ta;
+                layout.Children.Add(lbl2);
+                layout.Children.Add(itn2);
+
+
+                var button = new Button
+                {
+                    Text = "StackLayout",
+                    VerticalOptions = LayoutOptions.Start,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+                };
+                layout.Children.Add(button);
+
+
+
+                var h = 0;
+                //var sc = new Label { Text = "asfda" };
+
+
+                string[] values = { "flItem", "flItem", "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
+
+
+                while (reader.Read())
+                {
+                    var clab = new Label { Text = "Item " + h + "  " };
+                    var someValue = "";
+                    for (int i = 0; i <= Constants.AttributeNumberForDisplay; i = i + 1)
+                    {
+                        someValue = someValue + values[i] + " " + reader[values[i]] + "  ";
+                    }
+
+
+
+
+                    clab.Text +=  someValue;
+
+                    h += 1;
+                    layout.Children.Add(clab);
+                }
+                //grid.Children.Add(sc, 1, 1);
+                layout.Spacing = 20;
+
+                var li = new ToolbarItem { Text = "Logout " };
+                li.Clicked += Li_Clicked;
+
+                ScrollView scrollView = new ScrollView();
+                scrollView.Content = layout;
+                Content = scrollView;
+                //Di(reader);
+                reader.Close();
+                //con.Close();
+
             }
-            catch (Exception ex)
-            {
-                lab.Text = ex.Message;
-            }
+        }
 
-            string query = "SELECT * FROM inventory  where id  <"+ Constants.ItemNumberForDisplay;
-            var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, c);
-            var reader = cmd.ExecuteReader();
+        public void Di(MySqlDataReader r)
+        {
+            var reader = r;
             var layout = new StackLayout();
+            var lbl = new Label { Text = "Change the number of item to display " };
+            var itn = new Entry { Text = Constants.ItemNumberForDisplay.ToString()};
+            itn.TextChanged += E_T;
+            layout.Children.Add(lbl);
+            layout.Children.Add(itn);
+            var lbl2 = new Label { Text = "Change the number of attributes  to display " };
+            var itn2 = new Entry { Text = Constants.AttributeNumberForDisplay.ToString() };
+            itn2.TextChanged += E_Ta;
+            layout.Children.Add(lbl2);
+            layout.Children.Add(itn2);
+            
+           
             var button = new Button
             {
                 Text = "StackLayout",
                 VerticalOptions = LayoutOptions.Start,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-            
+            layout.Children.Add(button);
 
-            
-            
+
+
             var h = 0;
             //var sc = new Label { Text = "asfda" };
+
+
+            string[] values = {"flItem","flItem","fllocation","flagency","flcond","flsolarinumb","flmodel","fldesc" };
+
+
             while (reader.Read())
             {
-                var clab = new Label { Text = "Item " + h+"  " };
-                var someValue = reader["flItem"]
-                                + " Location : "
-                                + reader["fllocation"]
-                                + " Agency :  "
-                                + reader["flagency"];
-                
-                //lab.Text = lab.Text + someValue;
-                ////// Do something with someValue
-                ////var sc = new Label { Text = "lab.Text"};
-                ////sc.Text = ""+someValue;
+                var clab = new Label { Text = "Item " + h + "  " };
+                var someValue = " ";
+                for (int i = 0; i <= Constants.AttributeNumberForDisplay; i +=1)
+                {
+                    someValue = someValue +values[i]+" "+ reader[values[i]]+"  ";
+                }
+
+               
+
+
                 clab.Text = clab.Text + someValue;
 
                 h += 1;
                 layout.Children.Add(clab);
             }
             //grid.Children.Add(sc, 1, 1);
-            c.Close(); 
             layout.Spacing = 20;
-            Content = layout;
-            //    string serverIp = "166.62.74.162";
-            //    string username = "remote";
-            //    string password = "ghorar1Dim";
-            //    string databaseName = "myinvent";
+            
+            var li = new ToolbarItem { Text = "Logout " };
+            li.Clicked += Li_Clicked;
 
-            //    string dbConnectionString = string.Format("server={0};uid={1};pwd={2};database={3};", serverIp, username, password, databaseName);
-            //    string query = "SELECT * FROM inventory";
+            ScrollView scrollView = new ScrollView();
+            scrollView.Content = layout;
+            Content = scrollView;
+            reader.Close();
+        }
 
-            //    var conn = new MySql.Data.MySqlClient.MySqlConnection(dbConnectionString);
-            //    conn.Open();
+        private void Li_Clicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
-            //    var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn);
-            //    var reader = cmd.ExecuteReader();
-
-            //    while (reader.Read())
-            //    {
-            //        var someValue = reader["SomeColumnName"];
-            //        lab.Text = lab.Text + someValue;
-            //        // Do something with someValue
-            //    }
-            //}
+        public void Ld(MySqlConnection c) {
+            string query = "SELECT * FROM inventory  where id  <" +( Constants.ItemNumberForDisplay+1);
+            var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, c);
+            var reader = cmd.ExecuteReader();
+            Di(reader);
+            reader.Close();
+        }
+        void E_T(object sender, TextChangedEventArgs e)
+        {
+            if (e.NewTextValue == "") { return; }
+            Constants.ItemNumberForDisplay = Convert.ToInt32(e.NewTextValue);
+            Ld(con);
+        }
+        void E_Ta(object sender, TextChangedEventArgs e)
+        {
+            if (e.NewTextValue == "") { return; }
+            Constants.AttributeNumberForDisplay = Convert.ToInt32(e.NewTextValue);
+            Ld(con);
+        }
+        void Li_Clicked(object sender, TextChangedEventArgs e)
+        {
+            App.IsUserLoggedIn = false;
+            Navigation.InsertPageBefore(new LoginPage(), this);
+        }
+        async void OnLogoutButtonClicked(object sender, EventArgs e)
+        {
+            App.IsUserLoggedIn = false;
+            Navigation.InsertPageBefore(new LoginPage(), this);
+            await Navigation.PopAsync();
         }
     }
+    
 }

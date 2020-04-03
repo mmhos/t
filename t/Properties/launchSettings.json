@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "t": {
+      "commandName": "Project",
+      "sqlDebugging": true
+    }
+  }
+}

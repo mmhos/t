@@ -5,11 +5,11 @@ using System.Text;
 
 namespace t.cm
 {
-    class ic
+    class Ic
     {
         // Length of a line
         public MySqlConnection conn;
-        public  ic()
+        public  Ic()
         {
             MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
             conn_string.Server = "166.62.74.162";
@@ -21,6 +21,7 @@ namespace t.cm
 
 
            conn = new MySqlConnection(conn_string.ToString());
+
             
         }
         

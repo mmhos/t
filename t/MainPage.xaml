@@ -11,8 +11,10 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Main app contenthkk goes here" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Label Text="Select The Actions" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
             <Button Text="Display the list of items " Clicked="Button_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Button Text="Add a item" Clicked="Add_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Button Text="Delete a item" Clicked="Delete_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

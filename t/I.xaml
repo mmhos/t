@@ -7,10 +7,9 @@
              x:Class="t.I"
              Padding="0,20,0,0"
              >
-    <ContentPage.Padding >
-        
-        
-    </ContentPage.Padding>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name ="lab" Text="Welcome to Xamarin.Forms!"
