@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
 
 namespace t
 {
@@ -21,6 +22,16 @@ namespace t
             App.IsUserLoggedIn = false;
             Navigation.InsertPageBefore(new LoginPage(), this);
             await Navigation.PopAsync();
+        }
+        
+
+        private async  void ZXingScannerView_OnScanResult(ZXing.Result r)
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await DisplayAlert("Scanned result", r.Text, "OK");
+            });
+
         }
     }
 }

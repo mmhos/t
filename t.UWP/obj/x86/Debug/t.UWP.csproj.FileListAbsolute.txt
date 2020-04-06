@@ -74,3 +74,14 @@ C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\System.Reactive\en-US\Syste
 C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\System.Reactive\en-US\System.Reactive.Platforms.Windows.Strings_WindowsThreading.resw
 C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\Microsoft.UI.Xaml.pri.xml
 C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\MySqlConnector.dll
+C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\ZXingNetMobile\ZXingNetMobile.xr.xml
+C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\QRCoder.dll
+C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\System.Drawing.Common.dll
+C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\ZXing.Net.Mobile.Core.dll
+C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\ZXingNetMobile.dll
+C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\zxing.portable.dll
+C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\ZXing.Net.Mobile.Forms.WindowsUniversal.dll
+C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\ZXing.Net.Mobile.Forms.dll
+C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\ZXingNetMobile.pri.xml
+C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\ZXing.Net.Mobile.Forms.WindowsUniversal.pri.xml
+C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\FxResources.System.Drawing.Common.SR.resw

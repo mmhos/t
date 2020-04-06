@@ -62,3 +62,10 @@ C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\FreshIOC.pdb
 C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\FreshMvvm.dll
 C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\FreshMvvm.pdb
 C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\System.Reactive.dll
+C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\MySqlConnector.dll
+C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\QRCoder.dll
+C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\ZXing.Net.Mobile.Core.dll
+C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\ZXingNetMobile.dll
+C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\zxing.portable.dll
+C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\ZXing.Net.Mobile.Forms.dll
+C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\ZXing.Net.Mobile.Forms.iOS.dll

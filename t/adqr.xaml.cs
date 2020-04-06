@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MySql.Data.MySqlClient;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing.Net.Mobile.Forms;
@@ -55,6 +55,10 @@ namespace t
                     {
                         Navigation.PopModalAsync(true);
                         DisplayAlert("Scanned Barcode", result.Text, "OK");
+                        
+                        
+                        UniqueItemIdentifier uii = new UniqueItemIdentifier();
+                        AddItem(uii);
                     });
 
                 };
@@ -65,5 +69,22 @@ namespace t
                 //GlobalScript.SeptemberDebugMessages("ERROR", "BtnScanQR_Clicked", "Opening ZXing Failed: " + ex);
             }
         }
+        public void AddItem(UniqueItemIdentifier ui) {
+
+            DBConnect addconn = new DBConnect();
+            if (addconn.OpenConnection() == true) {
+                string query = "SELECT EXISTS (SELECT * FROM inventory  where flcustomer =" + ui.customer + " AND flagency =" + ui.agency +  " AND  flsolarinumb = " + ui.solnum + ")";
+                //query = "SELECT EXISTS(SELECT * FROM inventory  where  flsolarinumb = "+ui.solnum+")";
+                var cmd = new MySql.Data.MySqlClient.MySqlCommand(query,addconn.connection);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    DisplayAlert("Can read", reader[0].ToString(),"ok");
+                }
+            }
+        }
     }
+
+
+    
+
 }
