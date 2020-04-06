@@ -7,9 +7,12 @@
              x:Class="t.adqr">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Button Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
