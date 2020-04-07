@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="t.SearchableDisplay">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back To MainPage" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Label>Select The Number of Items</Label>
+        <Entry 
+            x:Name="ItemNumberDisplay"
+            Placeholder = "10" 
+               TextChanged="ItemNumberDisplay_TextChanged"
+               />
+        <Label>Select The Number of Attributes</Label>
+        <Entry 
+            x:Name="AttributeNumberForDisplay"
+            Placeholder = "5" 
+               TextChanged="AttributeNumberForDisplay_TextChanged"
+               />
+        <SearchBar Placeholder="Search...." TextChanged="SearchBar_TextChanged" TextColor="Blue"/>
+        <ListView x:Name="listView">
+            <!--IsGroupingEnabled="True"
+                  GroupDisplayBinding="{Binding Name}"
+                  GroupShortNameBinding="{Binding Status}"-->
+                  
+            <!--GroupDisplayBinding="{Binding Name}"-->
+                     
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Status}" TextColor="Black"/>
+
+                </DataTemplate>
+                    
+                    
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    
+</ContentPage>

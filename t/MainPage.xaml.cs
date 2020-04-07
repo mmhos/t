@@ -26,7 +26,7 @@ namespace t
         async void Button_Clicked(object sender, EventArgs e)
         {
 
-            Navigation.InsertPageBefore(new I(), this);
+            Navigation.InsertPageBefore(new SearchableDisplay(), this);
             await Navigation.PopAsync();
 
         }

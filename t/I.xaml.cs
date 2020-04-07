@@ -119,6 +119,7 @@ namespace t
 
         public void Di(MySqlDataReader r)
         {
+            Content = null;
             var reader = r;
             var layout = new StackLayout();
             var lbl = new Label { Text = "Change the number of item to display " };
