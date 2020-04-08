@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>FB83FB6551E4AD903790F50654B46C3898E13EF267FBAC5052E1A2196BCD8DAA</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>EB5000087B0D097CE62D0EC495180CE6B4106495D1914095B673839A265A21F0</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>3aab7b85-ebca-459c-8528-ac18be971b47_1.0.0.0_x86__9vb2q1x1sqe88</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>3aab7b85-ebca-459c-8528-ac18be971b47_9vb2q1x1sqe88!App</RegisteredUserModeAppID>
     <RegisteredPackageID>3aab7b85-ebca-459c-8528-ac18be971b47</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-08T13:28:05.634</Modified>
+      <Modified>2020-04-08T17:20:49.449</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\t.UWP.exe">
       <PackagePath>entrypoint\t.UWP.exe</PackagePath>
-      <Modified>2020-04-08T13:27:56.707</Modified>
+      <Modified>2020-04-08T17:20:41.159</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\.nuget\packages\freshmvvm\3.0.0\lib\netstandard2.0\FreshIOC.dll">
       <PackagePath>FreshIOC.dll</PackagePath>
@@ -112,7 +112,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t\bin\Debug\netstandard2.0\t.dll">
       <PackagePath>t.dll</PackagePath>
-      <Modified>2020-04-08T13:43:04.552</Modified>
+      <Modified>2020-04-08T17:21:54.381</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -275,11 +275,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-04-08T13:27:56.293</Modified>
+      <Modified>2020-04-08T17:20:40.729</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-04-08T13:27:56.293</Modified>
+      <Modified>2020-04-08T17:20:40.729</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -295,11 +295,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-04-06T19:46:05.339</Modified>
+      <Modified>2020-04-08T15:25:17.114</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\Core\t.UWP.exe">
       <PackagePath>t.UWP.exe</PackagePath>
-      <Modified>2020-04-08T13:28:05.621</Modified>
+      <Modified>2020-04-08T17:20:49.426</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

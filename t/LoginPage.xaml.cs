@@ -1,13 +1,16 @@
 ﻿using System;
 using Xamarin.Forms;
-
+using Xamarin.Essentials;
 namespace t
 {
 	public partial class LoginPage : ContentPage
 	{
 		public LoginPage ()
 		{
+			
 			InitializeComponent ();
+			gloc();
+
 		}
 
 		async void OnSignUpButtonClicked (object sender, EventArgs e)
@@ -37,5 +40,36 @@ namespace t
 		{
 			return user.Username == Constants.Username && user.Password == Constants.Password;
 		}
+		public   async void  gloc() {
+			try
+			{
+				var request = new GeolocationRequest(GeolocationAccuracy.Lowest);
+				
+				var   location =  await Geolocation.GetLocationAsync(request);
+
+				if (location != null)
+				{
+					gloca.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}";
+					 //Console.WriteLine($"Latitude: {location.Latitude}");
+					Console.WriteLine("jchjjhfkhfkh");
+				}
+			}
+			catch (FeatureNotSupportedException fnsEx)
+			{
+				// Handle not supported on device exception
+			}
+			catch (FeatureNotEnabledException fneEx)
+			{
+				// Handle not enabled on device exception
+			}
+			catch (PermissionException pEx)
+			{
+				// Handle permission exception
+			}
+			catch (Exception ex)
+			{
+				// Unable to get location
+			}
+		} 
 	}
 }
