@@ -10,11 +10,13 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Add Item Manually"
+            <Button Text="Manually"
+                    WidthRequest="100" HeightRequest="150"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                 Clicked="adma"/>
-            <Button Text="Add Item by QR_CODE "
+            <Button Text="ScanQR"
+                    WidthRequest="100" HeightRequest="150"
                 Clicked="adqr"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

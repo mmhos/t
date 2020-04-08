@@ -7,12 +7,14 @@
              x:Class="t.deit">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Delete Item Manually"
+            <Button Text="Manually"
+                    WidthRequest="100" HeightRequest="150"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                 Clicked="dema"/>
-            <Button Text="Delete Item by QR_CODE "
+            <Button Text="DeleteQR"
                 Clicked="deqr"
+                    WidthRequest="100" HeightRequest="150"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

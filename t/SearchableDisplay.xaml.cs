@@ -28,7 +28,7 @@ namespace t
             DBConnect co = new DBConnect();
             if (co.OpenConnection() == true)
             {
-                string query = "SELECT * FROM inventory  where id  <" + Constants.ItemNumberForDisplay;
+                string query = "SELECT * FROM inventory  where id  <" + (Constants.ItemNumberForDisplay+1);
                 var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
                  var reader = cmd.ExecuteReader();
                 string[] values = {   "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
@@ -36,7 +36,7 @@ namespace t
                 {
                     
                     string des="";
-                    for (int i = 0; i <= Constants.AttributeNumberForDisplay; i = i + 1)
+                    for (int i = 0; i <= Constants.AttributeNumberForDisplay-1; i = i + 1)
                     {
                         des= des + values[i] + " " + reader[values[i]] + "  ";
                     }

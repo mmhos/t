@@ -8,7 +8,10 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Back To MainPage" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
-    <StackLayout>
+    <StackLayout
+        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+        
+        >
         <Label>Select The Number of Items</Label>
         <Entry 
             x:Name="ItemNumberDisplay"

@@ -7,7 +7,74 @@
              x:Class="t.adqr">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Welcome to Xamarin.Forms!"
+            
+            <Button Text="New York"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Jamaica"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Warehouse"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Atlantic Terminal"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Newark"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Trenton"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="NJT NY"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Secaucus"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Grand Central Terminal"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="The National WWII Museum"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Metro North"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Metro Park"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                 Clicked="Button_Clicked"  
