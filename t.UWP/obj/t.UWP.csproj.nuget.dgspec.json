@@ -137,10 +137,6 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "FreshMvvm": {
-              "target": "Package",
-              "version": "[3.0.0, )"
-            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[0.63.0, )"

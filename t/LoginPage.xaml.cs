@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+
 namespace t
 {
 	public partial class LoginPage : ContentPage
@@ -9,7 +10,11 @@ namespace t
 		{
 			
 			InitializeComponent ();
-			gloc();
+			
+			
+
+
+
 
 		}
 

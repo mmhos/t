@@ -9,7 +9,7 @@
 		<ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
-		<StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+		<StackLayout x:Name="tabs" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <Label Text=" You are accessing the inventory from " />
             <Label x:Name="gloca" Text="Can't access GeoLocation" />
 			<Label Text="Username" />
@@ -18,6 +18,11 @@
 			<Entry x:Name="passwordEntry" IsPassword="true" />
 			<Button Text="Login" Clicked="OnLoginButtonClicked" />
 			<Label x:Name="messageLabel" />
-		</StackLayout>
-	</ContentPage.Content>
+            <WebView Source="https://www.google.com/"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            <StackLayout x:Name="WebViewLayout" VerticalOptions="FillAndExpand" >
+               
+            </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
 </ContentPage>

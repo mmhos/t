@@ -1,16 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "YvxavcWlhPNAj0+FfxKQKS+MYWu33bmuWqClLn/ZJY8Ynkja9kTPG88ROjHmO761arUE+lWV2BtJaeNvRDoVHA==",
+  "dgSpecHash": "daB+NLHDfd6OVgR16JpXCjh0wytKNNdrJkmc9DV+TA+hrkdA2n5X8JebYzXK+WJnArPMZp9PxK36EgA8JWCRjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\solari-1\\source\\repos\\t\\t.Android\\t.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\solari-1\\.nuget\\packages\\fastandroidcamera\\2.0.0\\fastandroidcamera.2.0.0.nupkg.sha512",
-    "C:\\Users\\solari-1\\.nuget\\packages\\freshmvvm\\3.0.0\\freshmvvm.3.0.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\mysqlconnector\\0.63.0\\mysqlconnector.0.63.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\qrcoder\\1.3.6\\qrcoder.1.3.6.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\system.drawing.common\\4.5.0-preview1-25914-04\\system.drawing.common.4.5.0-preview1-25914-04.nupkg.sha512",
-    "C:\\Users\\solari-1\\.nuget\\packages\\system.reactive\\4.0.0\\system.reactive.4.0.0.nupkg.sha512",
-    "C:\\Users\\solari-1\\.nuget\\packages\\system.runtime.interopservices.windowsruntime\\4.3.0\\system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.common\\1.1.1.3\\xamarin.android.arch.lifecycle.common.1.1.1.3.nupkg.sha512",

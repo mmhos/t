@@ -61,17 +61,6 @@ C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\MultipleQualifiersPerDimens
 C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160859180000000.json
 C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885454160000000.json
-C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\FreshIOC.dll
-C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\FreshIOC.pdb
-C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\FreshMvvm.dll
-C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\FreshMvvm.pdb
-C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\System.Reactive.dll
-C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\System.Reactive.pri.xml
-C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\System.Reactive\en-US\System.Reactive.Strings_Core.resw
-C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\System.Reactive\en-US\System.Reactive.Strings_Linq.resw
-C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\System.Reactive\en-US\System.Reactive.Strings_PlatformServices.resw
-C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\System.Reactive\en-US\System.Reactive.Strings_Providers.resw
-C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\System.Reactive\en-US\System.Reactive.Platforms.Windows.Strings_WindowsThreading.resw
 C:\Users\solari-1\source\repos\t\t.UWP\obj\x86\Debug\Microsoft.UI.Xaml.pri.xml
 C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\MySqlConnector.dll
 C:\Users\solari-1\source\repos\t\t.UWP\bin\x86\Debug\ZXingNetMobile\ZXingNetMobile.xr.xml

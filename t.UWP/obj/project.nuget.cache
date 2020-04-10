@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "yPs5+koIBKc3CKlccgeqau2KQ8dEuZOonubzcwpFM/VVZdnDOki3EwfifaHOQ8Cb15XMKPzqDH1KNFcsBykmGw==",
+  "dgSpecHash": "GdFGD4uo/e6DUTQRhFQiwhBhb9n84BKAm1hGaEhNrRbhYRNmsCjHkVi+kIH1taTNSoP4QedL0g0eWxfVVweJmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\solari-1\\source\\repos\\t\\t.UWP\\t.UWP.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\solari-1\\.nuget\\packages\\freshmvvm\\3.0.0\\freshmvvm.3.0.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\microsoft.net.native.compiler\\2.2.8-rel-28605-00\\microsoft.net.native.compiler.2.2.8-rel-28605-00.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.2.10\\microsoft.net.uwpcoreruntimesdk.2.2.10.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
@@ -34,7 +33,6 @@
     "C:\\Users\\solari-1\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\system.drawing.common\\4.5.0-preview1-25914-04\\system.drawing.common.4.5.0-preview1-25914-04.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
-    "C:\\Users\\solari-1\\.nuget\\packages\\system.reactive\\4.0.0\\system.reactive.4.0.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\win2d.uwp\\1.20.0\\win2d.uwp.1.20.0.nupkg.sha512",

@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TUsBYHQm6t3HfiSVtddCV7ae/shorktwcCpG5Blweus2Mf3aC48ikyZZGNL3UZ0zOnvmTiIeG0nJMi7p72rABQ==",
+  "dgSpecHash": "7ZevP15g1qNERjVuTiAZF2rVxxwYbEID1Eo7+idd7dJRrpH4QuiRyWo1Cpj/EHFKBJdDe2mND47s3eptkklAHw==",
   "success": true,
   "projectFilePath": "C:\\Users\\solari-1\\source\\repos\\t\\t.iOS\\t.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\solari-1\\.nuget\\packages\\freshmvvm\\3.0.0\\freshmvvm.3.0.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\mysqlconnector\\0.63.0\\mysqlconnector.0.63.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\qrcoder\\1.3.6\\qrcoder.1.3.6.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\system.drawing.common\\4.5.0-preview1-25914-04\\system.drawing.common.4.5.0-preview1-25914-04.nupkg.sha512",
-    "C:\\Users\\solari-1\\.nuget\\packages\\system.reactive\\4.0.0\\system.reactive.4.0.0.nupkg.sha512",
-    "C:\\Users\\solari-1\\.nuget\\packages\\system.runtime.interopservices.windowsruntime\\4.3.0\\system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\xamarin.essentials\\1.5.2\\xamarin.essentials.1.5.2.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\xamarin.forms\\4.5.0.530\\xamarin.forms.4.5.0.530.nupkg.sha512",
     "C:\\Users\\solari-1\\.nuget\\packages\\zxing.net.mobile\\2.4.1\\zxing.net.mobile.2.4.1.nupkg.sha512",
