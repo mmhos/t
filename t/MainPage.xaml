@@ -17,8 +17,9 @@
         <StackLayout>
             <Label Text="Select The Actions" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
             <Button WidthRequest="100" HeightRequest="100" Text="Display the list of items " Clicked="Button_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-            <Button WidthRequest="100" HeightRequest="100" Text="Add a item" Clicked="Add_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-            <Button WidthRequest="100" HeightRequest="100" Text="Delete a item" Clicked="Delete_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Button WidthRequest="100" HeightRequest="100" Text="Transfer a item" Clicked="Add_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Button WidthRequest="100" HeightRequest="100" Text="Remove  a item" Clicked="Delete_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Button WidthRequest="100" HeightRequest="100" Text="Add a item" Clicked="Add2_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

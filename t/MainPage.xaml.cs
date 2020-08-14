@@ -37,6 +37,13 @@ namespace t
             await Navigation.PopAsync();
 
         }
+        async void Add2_Clicked(object sender, EventArgs e)
+        {
+            Constants.branch = "Add";
+            Navigation.InsertPageBefore(new adit(), this);
+            await Navigation.PopAsync();
+
+        }
         async void Delete_Clicked(object sender, EventArgs e)
         {
 

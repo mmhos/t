@@ -1,19 +1,85 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                        x:Class="t.deqr"
-                        xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
-                        Title="Partial screen">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="t.deqr">
+    <ContentPage.Content>
+        <StackLayout>
 
-            <BoxView Grid.Row="0" BackgroundColor="Chocolate"/>
-            <zxing:ZXingScannerView Grid.Row="1"  OnScanResult="ZXingScannerView_OnScanResult"  IsScanning="true"
-                                WidthRequest="200" HeightRequest="200" />
-            <BoxView Grid.Row="2" BackgroundColor="Blue" />
-        </Grid>
-    </ContentPage>
+            <Button Text="New York"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Jamaica"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Warehouse"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Atlantic Terminal"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Newark"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Trenton"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="NJT NY"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Secaucus"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Grand Central Terminal"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="The National WWII Museum"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Metro North"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+            <Button Text="Metro Park"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"  
+                    
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
