@@ -34,7 +34,7 @@ namespace t
 #endif
             Button btn = sender as Button;
             string s = btn.Text;
-            if (Constants.branch == "Transfer")
+            
             {
                 try
                 {
@@ -133,21 +133,72 @@ namespace t
 
                             var dest = await DisplayActionSheet("Select the transfer destination", "Abort the transfer", "x", destination);
                             DBConnect co = new DBConnect();
+
                             if (co.OpenConnection() == true)
                             {
-                                string query = "Update inventory Set flquantity = flquantity-1 where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
-                                var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
-                                cmd.ExecuteNonQuery();
+                                if (Constants.branch == "Transfer")
+                                {
+                                    string query = "Update inventory Set flquantity = flquantity-1 where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                    var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                    cmd.ExecuteNonQuery();
 
-                                query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
-                                cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
-                                cmd.ExecuteNonQuery();
-                            //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
+                                    query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                    cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                    cmd.ExecuteNonQuery();
+                                    //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
 
 
+                                }
+                                else
+                                {
+                                    
+                                    {
+                                       
+                                        string query = "SELECT * FROM inventory  where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                        var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                        var reader = cmd.ExecuteReader();
+                                        var coun = 0;
 
+                                        while (reader.Read())
+                                        {
+                                            coun = coun + 1;
+
+                                        }
+                                        co.connection.Close();
+                                        co = new DBConnect();
+                                        co.OpenConnection();
+                                        if (coun == 0)
+                                        {
+                                            string sn = await DisplayPromptAsync("Required info", "Enter the shelf number");
+                                            string sc = await DisplayPromptAsync("Required info", "Enter the shelf column number");
+                                            string sr = await DisplayPromptAsync("Required info", "Enter the shelf row number");
+                                            string sd = await DisplayPromptAsync("Required info", "Enter the shelf depth");
+                                            // string emp = await DisplayPromptAsync("Required info", "Type your name?");
+
+                                            query = query = " INSERT INTO inventory (fllocation,flItem,fldesc,flsolarinumb,shelfNumber,shelfColumn,shelfRow,shelfDepth,flquantity) VALUES('" + s + "', '" + qrdata[1] + "', '" + qrdata[2] + "', '" + qrdata[0] + "', " + sn + ", " + sc + ", " + sr + ", " + sd + "," + 1 + ")";
+                                            cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                            await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                            cmd.ExecuteNonQuery();
+                                            co.connection.Close();
+                                        }
+                                        else
+                                        {
+                                            query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                            cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                            await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                            cmd.ExecuteNonQuery();
+                                            co.connection.Close();
+
+
+                                        }
+                                        await DisplayAlert("Number of items", coun.ToString(), "OK");
+                                        Constants.branch = "Transfer";
+                                    }
+
+
+                                }
                             co.connection.Close();
 
                             }
