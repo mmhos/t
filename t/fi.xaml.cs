@@ -18,7 +18,7 @@ namespace t
         }
         async private void fm(object sender, EventArgs e)
         {
-            Navigation.InsertPageBefore(new adma(), this);
+            Navigation.InsertPageBefore(new fm(), this);
             await Navigation.PopAsync();
         }
         async private void fq(object sender, EventArgs e)

@@ -14,10 +14,10 @@
                     WidthRequest="100" HeightRequest="150"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
-                Clicked="adma"/>
+                Clicked="fm"/>
             <Button Text="FindByQR"
                     WidthRequest="100" HeightRequest="150"
-                Clicked="adqr"
+                Clicked="fq"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
