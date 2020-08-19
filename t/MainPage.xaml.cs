@@ -20,7 +20,7 @@ namespace t
          async void OnLogoutButtonClicked(object sender, EventArgs e)
         {
             App.IsUserLoggedIn = false;
-            Navigation.InsertPageBefore(new LoginPage(), this);
+            
             await Navigation.PopAsync();
         }
         async void Button_Clicked(object sender, EventArgs e)
