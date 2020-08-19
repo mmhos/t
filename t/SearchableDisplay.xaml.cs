@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace t
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

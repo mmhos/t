@@ -57,5 +57,11 @@ namespace t
             Navigation.InsertPageBefore(new fi(), this);
             await Navigation.PopAsync();
         }
+
+       async  private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            Navigation.InsertPageBefore(new lqd(), this);
+            await Navigation.PopAsync();
+        }
     }
 }

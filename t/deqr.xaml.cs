@@ -41,7 +41,8 @@ namespace t
 #endif
             Button btn = sender as Button;
             string s = btn.Text;
-
+          
+            var email =  new em();
             try
             {
 
@@ -164,7 +165,30 @@ namespace t
                             cmd.ExecuteNonQuery();
                             //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
 
+                             query = "Select flquantity from inventory  where fllocation = '" + s + "' AND  flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                             cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                            var reader = cmd.ExecuteReader();
+                            var quan = "";
+                            
+                            ;
+                            var c = 0;
+                            while (reader.Read())
+                            {
+                                quan = ""+reader["flquantity"];
+                                //int y = Int32.Parse(quan);
+                                //if (y >x)
+                                c++;
+                            }
 
+                            int x = Int32.Parse(quan);
+                            await DisplayAlert(c +"  Quantity of  "+ qrdata[1] +" at "+ s, quan, "OK");
+                            
+                            var reci = new List<string>();
+                            reci.Add("mhosain@solaricorp.com");
+                            if (x < 5) {
+
+                                await email.SendEmail("test", qrdata[1]+" is in low quantity"+" at "+ s, reci);
+                            }
 
                             co.connection.Close();
 

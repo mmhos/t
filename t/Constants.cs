@@ -8,6 +8,7 @@
 		public static int AttributeNumberForDisplay = 5;
 		public static string currentLocation = "";
 		public static string branch ="Transfer";
+		public static string findTerm = "";
 
 	}
 }

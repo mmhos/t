@@ -21,6 +21,7 @@
             <Button WidthRequest="100" HeightRequest="100" Text="Remove  a item" Clicked="Delete_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
             <Button WidthRequest="100" HeightRequest="100" Text="Add a item" Clicked="Add2_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
             <Button WidthRequest="100" HeightRequest="100" Text="Find a item" Clicked="Button_Clicked_1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Button WidthRequest="100" HeightRequest="100" Text="Low Quanityt" Clicked="Button_Clicked_2"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
