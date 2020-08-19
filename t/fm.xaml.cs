@@ -32,9 +32,14 @@ namespace t
             {
                
                 {
-                    string query = "SELECT * FROM inventory  where flItem ='%" + st + "%'";
+                    // string query = "SELECT * FROM inventory  where LIKE flItem ='%" + st + "%'";
+
+                    string query = "SELECT * FROM inventory " ;
+
+
                     var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
                     var reader = cmd.ExecuteReader();
+                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
                     string[] values = { "fllocation", "shelfNumber", "shelfColumn", "shelfRow", "shelfDepth", "flquantity" };
                     Grid grid = new Grid
                     {
@@ -50,24 +55,67 @@ namespace t
                 new ColumnDefinition()
             }
                     };
-                    var counter = 0;
-                    Constants.AttributeNumberForDisplay = values.Length-1;
+                    var counter = 1;
+                    Constants.AttributeNumberForDisplay = values.Length;
+                    await DisplayAlert("Scanned Infos", "Before while loop", "OK");
+                    grid.Children.Add(new Label
+                    {
+                        //Text = "Row " + counter + ", Column " + i + reader[values[i]],
+                        //Text = "["+counter+","+i+"]"+ reader[values[i]],
+                        Text = " " + values[0].Substring(2),
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.Center
+                    }, 0, 0);
+                    for (int i = 1; i <= Constants.AttributeNumberForDisplay - 2; i = i + 1)
+                    {
+                        string t = " " + values[i];
+                        t = t.Substring(6);
+                        grid.Children.Add(new Label
+                        {
+                            //Text = "Row " + counter + ", Column " + i + reader[values[i]],
+                            //Text = "["+counter+","+i+"]"+ reader[values[i]],
+                            Text = " " + t,
+                            HorizontalOptions = LayoutOptions.Center,
+                            VerticalOptions = LayoutOptions.Center
+                        }, i, 0);
+
+
+                    }
+                    grid.Children.Add(new Label
+                    {
+                        //Text = "Row " + counter + ", Column " + i + reader[values[i]],
+                        //Text = "["+counter+","+i+"]"+ reader[values[i]],
+                        Text = " " + values[ Constants.AttributeNumberForDisplay - 1],
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.Center
+                    }, Constants.AttributeNumberForDisplay - 1, 0);
                     while (reader.Read())
                     {
-
-                        counter = counter + 1;
-                        for (int i = 0; i <= Constants.AttributeNumberForDisplay - 1; i = i + 1)
-                        {
-                            grid.Children.Add(new Label
+                        string currentItem = ""+reader["flItem"];
+                        if (currentItem.Contains(st)){
+                            for (int i = 0; i <= Constants.AttributeNumberForDisplay - 1; i = i + 1)
                             {
-                                Text = "Row "+counter+", Column "+i+ reader[values[i]],
-                                HorizontalOptions = LayoutOptions.Center,
-                                VerticalOptions = LayoutOptions.Center
-                            }, counter, i);
+                                string t = " " + reader[values[i]];
+                                
+                                grid.Children.Add(new Label
+                                {
+                                    //Text = "Row " + counter + ", Column " + i + reader[values[i]],
+                                    //Text = "["+counter+","+i+"]"+ reader[values[i]],
+                                    Text = t,
+                                    HorizontalOptions = LayoutOptions.Center,
+                                    VerticalOptions = LayoutOptions.Center
+                                }, i, counter);
+                            }
+                            counter = counter + 1;
                         }
-                       
                         
                     }
+
+                   await DisplayAlert("Scanned Infos", "After while loop "+counter , "OK");
+                    ScrollView scrollView = new ScrollView { Content = grid };
+                    
+                    Content = scrollView;
+                    
 
 
                 }
