@@ -35,3 +35,4 @@ C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\Styles\buttonStyle.c
 C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\fi.xaml.g.cs
 C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\fm.xaml.g.cs
 C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\lqd.xaml.g.cs
+C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\ImageTest.xaml.g.cs

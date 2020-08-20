@@ -16,6 +16,8 @@ namespace t
         public deqr()
         {
             InitializeComponent();
+            
+            lp();
         }
         async void OnLogoutButtonClicked(object sender, EventArgs e)
         {
@@ -33,14 +35,14 @@ namespace t
             });
 
         }
-        private void Button_Clicked(object sender, EventArgs e)
+        private void lp()
         {
 #if __ANDROID__
 	// Initialize the scanner first so it can track the current context
 	MobileBarcodeScanner.Initialize (Application);
 #endif
-            Button btn = sender as Button;
-            string s = btn.Text;
+            //Button btn = sender as Button;
+            //string s = btn.Text;
           
             var email =  new em();
             try
@@ -66,8 +68,9 @@ namespace t
                     Device.BeginInvokeOnMainThread(async () =>
                     {
                         Navigation.PopModalAsync(true);
-                        await DisplayAlert("Current destination", s, "OK");
-                        Constants.currentLocation = s;
+
+                        //await DisplayAlert("Current destination", s, "OK");
+                        //Constants.currentLocation = s;
                         await DisplayAlert("Scanned Barcode", result.Text, "OK");
 
 
@@ -90,14 +93,29 @@ namespace t
                             counter = counter + 1;
 
                         }
-                        //items = new ObservableCollection<string>() { "Speaker", "Pen", "Lamp", "Monitor", "Bag", "Book", "Cap", "Tote", "Floss", "Phone" };
-                        ////DisplayAlert("Scanned Infos", qrdata[0]+ qrdata[1]+qrdata[2], "OK");
-                        //// var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
-                        //ListView lstView = new ListView();
-                        //lstView.ItemsSource = items;
-                        ////UniqueItemIdentifier uii = new UniqueItemIdentifier();
-                        ////AddItem(uii);
-                        ///
+                        List<String> possibleLocations = new List<string> { };
+                        DBConnect co = new DBConnect();
+                        if (co.OpenConnection() == true)
+                        {
+                            string query = "SELECT * FROM inventory  where  flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                            var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                            var reader = cmd.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+
+                                possibleLocations.Add("" + reader["fllocation"]);
+
+
+
+                            }
+
+
+                            co.connection.Close();
+
+                        }
+                        
+                        var s = await DisplayActionSheet("Select the current location of the item ", "Abort the transfer", "x", possibleLocations.ToArray());
                         string[] destination = { "New York", "Jamaica","Warehouse", "Atlantic Terminal", "Newark","Trenton",
 
 
@@ -142,56 +160,68 @@ namespace t
                         string [] customer = { "LIRR"," NJ Transit"," NYCTA"," MBTA"," PATH"," TRIMET"," Please select a customer"," Massachusetts Bay Transportation Authority"," MoMa"," Luis Vuitton North America"," Metro North Railroad",""," Solari Corp"," The National WWII Museum"," Port Authority" };
                         string[] location = { " NY Penn"," Jamaica"," Warehouse"," Jamacia"," Atlantic Terminal"," Newark"," Trenton"," NJT NY"," Secaucus"," GCT",""," Please select item location"," The National WWII Museum"," Grand Central"," Metro North" };
                         var age = await DisplayActionSheet("Select the agency the item is being given to ", "Abort the transfer", "x", agency);
-                        var cus  = await DisplayActionSheet("Select the customer the item is being given to ", "Abort the transfer", "x", customer);
-                        var loc = await DisplayActionSheet("Select the destination ", "Abort the transfer", "x", location);
-                        string rec = await DisplayPromptAsync("Required info", "Name of the recipient?");
-                        string objective = await DisplayPromptAsync("Required info", "Objective of the transfer?");
-                        string emp = await DisplayPromptAsync("Required info", "Type your name?");
-                        DateTime today = DateTime.Today;
-                        String date = today.ToString("yyyy-MM-dd");
-                        await DisplayAlert("Today's Date", today.ToString(), "OK");
-                        DBConnect co = new DBConnect();
-                        if (co.OpenConnection() == true)
-                        {
-                            string query = "Update inventory Set flquantity = flquantity-1 where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
-                            var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                            await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
-                            cmd.ExecuteNonQuery();
-
-                            //query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
-                            query = " INSERT INTO CustomerInventory (rec,ag,loc,it,itdes,itnum,emp,date) VALUES('"+rec+"', '"+age+"', '"+loc+"', '"+ qrdata[1] + "', '" + qrdata[2] + "', '"+ qrdata[0] + "', '" +emp+ "', '"+date+ "')";
-                            cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                            await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
-                            cmd.ExecuteNonQuery();
-                            //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
-
-                             query = "Select flquantity from inventory  where fllocation = '" + s + "' AND  flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
-                             cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                            var reader = cmd.ExecuteReader();
-                            var quan = "";
-                            
-                            ;
-                            var c = 0;
-                            while (reader.Read())
+                        if (age == "Abort the transfer") { await Navigation.PushAsync(new deit()); }
+                        else {
+                            var cus = await DisplayActionSheet("Select the customer the item is being given to ", "Abort the transfer", "x", customer);
+                            if (cus == "Abort the transfer") { await Navigation.PushAsync(new deit()); }
+                            else
                             {
-                                quan = ""+reader["flquantity"];
-                                //int y = Int32.Parse(quan);
-                                //if (y >x)
-                                c++;
+                                var loc = await DisplayActionSheet("Select the destination ", "Abort the transfer", "x", location);
+                                if (loc == "Abort the transfer") { await Navigation.PushAsync(new deit()); return; }
+                                string rec = await DisplayPromptAsync("Required info", "Name of the recipient?","OK","Cancel");
+                                if (rec == "Cancel") { await Navigation.PushAsync(new deit()); return; }
+                                string objective = await DisplayPromptAsync("Required info", "Objective of the transfer?", "OK", "Cancel");
+                                if (objective == "Cancel") { await Navigation.PushAsync(new deit()); return; }
+                                string emp = await DisplayPromptAsync("Required info", "Type your name?", "OK", "Cancel");
+                                if (emp == "Cancel") { await Navigation.PushAsync(new deit()); return; }
+                                DateTime today = DateTime.Today;
+                                String date = today.ToString("yyyy-MM-dd");
+                                await DisplayAlert("Today's Date", today.ToString(), "OK");
+                                 co = new DBConnect();
+                                if (co.OpenConnection() == true)
+                                {
+                                    string query = "Update inventory Set flquantity = flquantity-1 where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                    var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                    cmd.ExecuteNonQuery();
+
+                                    //query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                    query = " INSERT INTO CustomerInventory (rec,ag,loc,it,itdes,itnum,emp,date) VALUES('" + rec + "', '" + age + "', '" + loc + "', '" + qrdata[1] + "', '" + qrdata[2] + "', '" + qrdata[0] + "', '" + emp + "', '" + date + "')";
+                                    cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                    cmd.ExecuteNonQuery();
+                                    //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
+
+                                    query = "Select flquantity from inventory  where fllocation = '" + s + "' AND  flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                    cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                    var reader = cmd.ExecuteReader();
+                                    var quan = "";
+
+                                    ;
+                                    var c = 0;
+                                    while (reader.Read())
+                                    {
+                                        quan = "" + reader["flquantity"];
+                                        //int y = Int32.Parse(quan);
+                                        //if (y >x)
+                                        c++;
+                                    }
+
+                                    int x = Int32.Parse(quan);
+                                    await DisplayAlert(c + "  Quantity of  " + qrdata[1] + " at " + s, quan, "OK");
+
+                                    var reci = new List<string>();
+                                    reci.Add("mhosain@solaricorp.com");
+                                    if (x < 5)
+                                    {
+
+                                        await email.SendEmail("test", qrdata[1] + " is in low quantity" + " at " + s, reci);
+                                    }
+
+                                    co.connection.Close();
+
+                                }
                             }
-
-                            int x = Int32.Parse(quan);
-                            await DisplayAlert(c +"  Quantity of  "+ qrdata[1] +" at "+ s, quan, "OK");
-                            
-                            var reci = new List<string>();
-                            reci.Add("mhosain@solaricorp.com");
-                            if (x < 5) {
-
-                                await email.SendEmail("test", qrdata[1]+" is in low quantity"+" at "+ s, reci);
-                            }
-
-                            co.connection.Close();
-
                         }
                     });
 

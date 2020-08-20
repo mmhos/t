@@ -31,5 +31,45 @@ namespace t
                 // Some other exception occurred
             }
         }
+        public void photoLoad(int n)
+        {
+            
+
+            DBConnect co = new DBConnect();
+            if (co.OpenConnection() == true)
+            {
+                string query = "SELECT * FROM inventory  where id  <" + (Constants.ItemNumberForDisplay + 1);
+                var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                var reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                }
+            }
+
+                //try
+                //{
+                //    string query = "SELECT * FROM inventory  where id  <" + (Constants.ItemNumberForDisplay + 1);
+                //    var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                //    var reader = cmd.ExecuteReader();
+
+                //    while (reader.Read())
+                //    {
+                //        ImageByte = (Byte[])(row["image"]);
+                //    }
+
+                //    if (ImageByte != null)
+                //    {
+                //        // You need to convert it in bitmap to display the image
+                //        pictureBox1.Image = ByteToImage(ImageByte);
+                //        pictureBox1.Refresh();
+                //    }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
+            }
     }
 }

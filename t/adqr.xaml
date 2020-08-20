@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="t.adqr">
     <ContentPage.Content>
-        <StackLayout>
+        <!--<StackLayout>
             
             <Button Text="New York"
                 VerticalOptions="CenterAndExpand" 
@@ -80,6 +80,7 @@
                 Clicked="Button_Clicked"  
                     
                     />
-        </StackLayout>
+        </StackLayout>-->
     </ContentPage.Content>
+    
 </ContentPage>
