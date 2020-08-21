@@ -142,22 +142,24 @@ namespace t
                                     //imageSource.CachingEnabled = false;
                                     //imageSource.CacheValidity = TimeSpan.FromHours(1);
 
-                                    ImageButton imageButton = new ImageButton
-                                    {
-                                        Source = imageSource,
-                                        WidthRequest = 50,
-                                        HeightRequest = 50,
-                                        HorizontalOptions = LayoutOptions.Center,
-                                        VerticalOptions = LayoutOptions.CenterAndExpand,
-                                        Aspect = Aspect.Fill
-                                    };
+                                    ////ImageButton imageButton = new ImageButton
+                                    //{
+                                    //    Source = imageSource,
+                                    //     WidthRequest= 5,
+                                    //    HeightRequest = 5,
+                                    //    HorizontalOptions = LayoutOptions.CenterAndExpand,
+                                    //    VerticalOptions = LayoutOptions.CenterAndExpand,
+                                    //    Aspect = Aspect.Fill
+                                    ////};
                                     ImageButton ic = new ImageButton();
+                                    ic.WidthRequest = 5;
+                                    ic.HeightRequest = 5;
                                     ic.Source = imageSource;
                                     ic.Aspect = Aspect.Fill;
                                     ic.BackgroundColor = Color.Transparent;
 
 
-                                    grid.Children.Add (ic, 1,counter);
+                                    grid.Children.Add (ic, i,counter);
                                    // await DisplayAlert("generating image","p","l");
                                 //    grid.Children.Add(new Label
                                 //{
@@ -177,7 +179,7 @@ namespace t
                                     Text = t,
                                     HorizontalOptions = LayoutOptions.CenterAndExpand,
                                     VerticalOptions = LayoutOptions.CenterAndExpand
-                                }, i, counter+1);}
+                                }, i, counter);}
                             }
                             counter = counter +2;
                         }
