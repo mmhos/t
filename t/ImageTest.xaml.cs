@@ -18,7 +18,7 @@ namespace t
             DBConnect co = new DBConnect();
             if (co.OpenConnection() == true)
             {
-                var imageSource = new UriImageSource { Uri = new Uri("http://solaricorp.net/sc/images/Meanwell-SP-150-24.jpg") };
+                var imageSource = new UriImageSource { Uri = new Uri("https://solaricorp.net/sc/images/Meanwell-SP-150-24.jpg") };
                 imageSource.CachingEnabled = false;
                 imageSource.CacheValidity = TimeSpan.FromHours(1);
                 image.Source = imageSource;
