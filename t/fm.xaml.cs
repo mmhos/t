@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,6 +53,7 @@ namespace t
             fp(st);
         }
         async public void fp(string st) {
+            ScrollView scrollView = new ScrollView { };
             DBConnect co = new DBConnect();
             if (co.OpenConnection() == true)
             {
@@ -65,7 +67,8 @@ namespace t
                     var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
                     var reader = cmd.ExecuteReader();
                     await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
-                    string[] values = { "fllocation", "shelfNumber", "shelfColumn", "shelfRow", "shelfDepth", "flquantity" };
+                    //string[] values = { "fllocation", "shelfNumber", "shelfColumn", "shelfRow", "shelfDepth", "flquantity" };
+                    string[] values = { "fllocation", "flItem", "flimage" };
                     Grid grid = new Grid
                     {
                         RowDefinitions =
@@ -90,30 +93,41 @@ namespace t
                         Text = " " + values[0].Substring(2),
                         HorizontalOptions = LayoutOptions.Center,
                         VerticalOptions = LayoutOptions.Center
-                    }, 0, 0);
-                    for (int i = 1; i <= Constants.AttributeNumberForDisplay - 2; i = i + 1)
-                    {
-                        string t = " " + values[i];
-                        t = t.Substring(6);
-                        grid.Children.Add(new Label
-                        {
-                            //Text = "Row " + counter + ", Column " + i + reader[values[i]],
-                            //Text = "["+counter+","+i+"]"+ reader[values[i]],
-                            Text = " " + t,
-                            HorizontalOptions = LayoutOptions.Center,
-                            VerticalOptions = LayoutOptions.Center
-                        }, i, 0);
-
-
-                    }
+                    }, 0, 0) ;
                     grid.Children.Add(new Label
                     {
                         //Text = "Row " + counter + ", Column " + i + reader[values[i]],
                         //Text = "["+counter+","+i+"]"+ reader[values[i]],
-                        Text = " " + values[Constants.AttributeNumberForDisplay - 1],
+                        Text = "Item",
                         HorizontalOptions = LayoutOptions.Center,
                         VerticalOptions = LayoutOptions.Center
-                    }, Constants.AttributeNumberForDisplay - 1, 0);
+                    }, 1, 0);
+                    //for (int i = 1; i <= Constants.AttributeNumberForDisplay - 2; i = i + 1)
+                    //{
+                    //    string t = " " + values[i];
+                    //    t = t.Substring(6);
+                    //    grid.Children.Add(new Label
+                    //    {
+                    //        //Text = "Row " + counter + ", Column " + i + reader[values[i]],
+                    //        //Text = "["+counter+","+i+"]"+ reader[values[i]],
+                    //        Text = " " + t,
+                    //        HorizontalOptions = LayoutOptions.Center,
+                    //        VerticalOptions = LayoutOptions.Center
+                    //    }, i, 0);
+
+
+                    //}
+
+                    grid.Children.Add(new Label
+                    {
+                        //Text = "Row " + counter + ", Column " + i + reader[values[i]],
+                        //Text = "["+counter+","+i+"]"+ reader[values[i]],
+                        Text = " Images",
+                        //+ values[Constants.AttributeNumberForDisplay - 1],
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.Center
+                    }, Constants.AttributeNumberForDisplay - 1, 0) ;;;
+
                     while (reader.Read())
                     {
                         string currentItem = "" + reader[Constants.findTerm];
@@ -121,25 +135,59 @@ namespace t
                         {
                             for (int i = 0; i <= Constants.AttributeNumberForDisplay - 1; i = i + 1)
                             {
-                                string t = " " + reader[values[i]];
+                                string t =  ""+reader[values[i]];
+                                if (values[i] == "flimage")
+                                {
+                                    var imageSource = new UriImageSource { Uri = new Uri("https://solaricorp.net/"+t ) };
+                                    //imageSource.CachingEnabled = false;
+                                    //imageSource.CacheValidity = TimeSpan.FromHours(1);
 
+                                    ImageButton imageButton = new ImageButton
+                                    {
+                                        Source = imageSource,
+                                        WidthRequest = 50,
+                                        HeightRequest = 50,
+                                        HorizontalOptions = LayoutOptions.Center,
+                                        VerticalOptions = LayoutOptions.CenterAndExpand,
+                                        Aspect = Aspect.Fill
+                                    };
+                                    ImageButton ic = new ImageButton();
+                                    ic.Source = imageSource;
+                                    ic.Aspect = Aspect.Fill;
+                                    ic.BackgroundColor = Color.Transparent;
+
+
+                                    grid.Children.Add (ic, 1,counter);
+                                   // await DisplayAlert("generating image","p","l");
+                                //    grid.Children.Add(new Label
+                                //{
+                                    
+                                //    Text = t,
+                                //    HorizontalOptions = LayoutOptions.Center,
+                                //    VerticalOptions = LayoutOptions.Center
+                                //}, i, counter);
+
+
+                                }
+                                else { 
                                 grid.Children.Add(new Label
                                 {
                                     //Text = "Row " + counter + ", Column " + i + reader[values[i]],
                                     //Text = "["+counter+","+i+"]"+ reader[values[i]],
                                     Text = t,
-                                    HorizontalOptions = LayoutOptions.Center,
-                                    VerticalOptions = LayoutOptions.Center
-                                }, i, counter);
+                                    HorizontalOptions = LayoutOptions.CenterAndExpand,
+                                    VerticalOptions = LayoutOptions.CenterAndExpand
+                                }, i, counter+1);}
                             }
-                            counter = counter + 1;
+                            counter = counter +2;
                         }
 
+
                     }
+                        await DisplayAlert("Scanned Infos", "After while loop " + counter, "OK");
 
-                    await DisplayAlert("Scanned Infos", "After while loop " + counter, "OK");
-                    ScrollView scrollView = new ScrollView { Content = grid };
 
+                    scrollView.Content = grid;
                     Content = scrollView;
                     Title = "All items with " + st+ " in "+Constants.findTerm.Substring(2);
 
@@ -148,5 +196,6 @@ namespace t
             }
 
         }
+        async public void  im() { }
     }
 }
