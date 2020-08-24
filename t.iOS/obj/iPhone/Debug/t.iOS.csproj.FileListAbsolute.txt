@@ -57,11 +57,6 @@ C:\Users\solari-1\source\repos\t\t.iOS\obj\iPhone\Debug\XamlC.stamp
 C:\Users\solari-1\source\repos\t\t.iOS\obj\iPhone\Debug\t.iOS.csproj.CopyComplete
 C:\Users\solari-1\source\repos\t\t.iOS\obj\iPhone\Debug\t.iOS.exe
 C:\Users\solari-1\source\repos\t\t.iOS\obj\iPhone\Debug\t.iOS.pdb
-C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\FreshIOC.dll
-C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\FreshIOC.pdb
-C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\FreshMvvm.dll
-C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\FreshMvvm.pdb
-C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\System.Reactive.dll
 C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\MySqlConnector.dll
 C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\QRCoder.dll
 C:\Users\solari-1\source\repos\t\t.iOS\bin\iPhone\Debug\ZXing.Net.Mobile.Core.dll
