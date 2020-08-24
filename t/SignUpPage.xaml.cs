@@ -16,7 +16,7 @@ namespace t
 		static string ComputeSha256Hash(string rawData)
 		{
 			// Create a SHA256   
-			using (SHA256 sha256Hash = SHA256.Create())
+			using (MD5 sha256Hash = MD5.Create())
 			{
 				// ComputeHash - returns byte array  
 				byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
@@ -74,8 +74,13 @@ namespace t
 						"Please click this link to activate your account:" + "\n" +
 					"http://www.solaricorp.net/EmailVerification/ev.php?email="+ user.Email+"&name="+user.Username+"&hash="+hash;
 					;
-
-
+					DBConnect co = new DBConnect();
+					co.connection.Open();
+					string query =  "INSERT INTO users(username, password, email, hash) VALUES('" + user.Username + "', '" + user.Password + "', '" + user.Email + "', '" + hash + "')";
+					var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+					await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+					cmd.ExecuteNonQuery();
+					co.connection.Close();
 					SmtpServer.Port = 587;
 					SmtpServer.Host = "smtp.gmail.com";
 					SmtpServer.EnableSsl = true;
@@ -83,6 +88,7 @@ namespace t
 					SmtpServer.Credentials = new System.Net.NetworkCredential("abracadabra123098456@gmail.com", "agdum1Bagdum!");
 
 					SmtpServer.Send(mail);
+					
 				}
 				catch (Exception ex)
 				{
@@ -90,7 +96,7 @@ namespace t
 				}
 				var rootPage = Navigation.NavigationStack.FirstOrDefault ();
 				if (rootPage != null) {
-					App.IsUserLoggedIn = true;
+					App.IsUserLoggedIn = false;
 					Navigation.InsertPageBefore (new MainPage (), Navigation.NavigationStack.First ());
 					await Navigation.PopToRootAsync ();
 				}
