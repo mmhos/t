@@ -43,7 +43,18 @@ namespace t
 
 		bool AreCredentialsCorrect (User user)
 		{
-			return user.Username == Constants.Username && user.Password == Constants.Password;
+			DBConnect co = new DBConnect();
+			co.connection.Open();
+			string query = "SELECT password FROM users where username = '" + user.Username+"'";
+			var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+			var reader = cmd.ExecuteReader();
+			var p="";
+			while (reader.Read())
+			{
+				p = ""+reader["password"];
+			}
+			//return user.Username == Constants.Username && user.Password == Constants.Password;
+			return p == user.Password;
 		}
 		public   async void  gloc() {
 			try

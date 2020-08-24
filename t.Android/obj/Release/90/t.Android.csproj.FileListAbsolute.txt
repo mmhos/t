@@ -421,3 +421,4 @@ C:\Users\solari-1\source\repos\t\t.Android\obj\Release\90\stamp\_ConvertResource
 C:\Users\solari-1\source\repos\t\t.Android\obj\Release\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\solari-1\source\repos\t\t.Android\obj\Release\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\solari-1\source\repos\t\t.Android\obj\Release\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\solari-1\source\repos\t\t.Android\obj\Release\90\android\src\xamarin\essentials\fileProvider.java
