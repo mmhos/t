@@ -14,7 +14,9 @@
         <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
+        <FlexLayout Direction="Column"
+                AlignItems="Center"
+                JustifyContent="SpaceEvenly">
             <Label Text="Select The Actions" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
             <Button WidthRequest="100" HeightRequest="100" Text="Display the list of items " Clicked="Button_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
             <Button WidthRequest="100" HeightRequest="100" Text="Transfer a item" Clicked="Add_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
@@ -22,6 +24,6 @@
             <Button WidthRequest="100" HeightRequest="100" Text="Add a item" Clicked="Add2_Clicked" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
             <Button WidthRequest="100" HeightRequest="100" Text="Find a item" Clicked="Button_Clicked_1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
             <Button WidthRequest="100" HeightRequest="100" Text="Low Quanity" Clicked="Button_Clicked_2"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-        </StackLayout>
+        </FlexLayout>
     </ContentPage.Content>
 </ContentPage>

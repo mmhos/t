@@ -16,7 +16,7 @@ namespace t.UI
         {
             InitializeComponent();
         }
-        protected async override void OnAppearing()
+        protected  override void OnAppearing()
         {
             //base.OnAppearing();
 

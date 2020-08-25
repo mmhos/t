@@ -39,3 +39,4 @@ C:\Users\solari-1\source\repos\t\t\obj\Release\netstandard2.0\fi.xaml.g.cs
 C:\Users\solari-1\source\repos\t\t\obj\Release\netstandard2.0\fm.xaml.g.cs
 C:\Users\solari-1\source\repos\t\t\obj\Release\netstandard2.0\ImageTest.xaml.g.cs
 C:\Users\solari-1\source\repos\t\t\obj\Release\netstandard2.0\lqd.xaml.g.cs
+C:\Users\solari-1\source\repos\t\t\obj\Release\netstandard2.0\fq.xaml.g.cs

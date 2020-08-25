@@ -28,7 +28,8 @@ namespace t
             }
             catch (Exception ex)
             {
-                // Some other exception occurred
+                // Some other exception occurreds
+                
             }
         }
         public void photoLoad(int n)

@@ -451,3 +451,4 @@ C:\Users\solari-1\source\repos\t\t.Android\obj\Debug\90\android\src\crc6480997b3
 C:\Users\solari-1\source\repos\t\t.Android\obj\Debug\90\android\src\crc6480997b3ef81bf9b2\ZXingSurfaceView.java
 C:\Users\solari-1\source\repos\t\t.Android\obj\Debug\90\link.flag
 C:\Users\solari-1\source\repos\t\t.Android\obj\Debug\90\android\src\xamarin\essentials\fileProvider.java
+C:\Users\solari-1\source\repos\t\t.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\SingleLocationListener.java

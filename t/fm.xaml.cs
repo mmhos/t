@@ -66,7 +66,7 @@ namespace t
 
                     var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
                     var reader = cmd.ExecuteReader();
-                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                    //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
                     //string[] values = { "fllocation", "shelfNumber", "shelfColumn", "shelfRow", "shelfDepth", "flquantity" };
                     string[] values = { "fllocation", "flItem", "flimage" };
                     Grid grid = new Grid
@@ -85,7 +85,7 @@ namespace t
                     };
                     var counter = 1;
                     Constants.AttributeNumberForDisplay = values.Length;
-                    await DisplayAlert("Scanned Infos", "Before while loop", "OK");
+                    //await DisplayAlert("Scanned Infos", "Before while loop", "OK");
                     grid.Children.Add(new Label
                     {
                         //Text = "Row " + counter + ", Column " + i + reader[values[i]],
@@ -186,7 +186,7 @@ namespace t
 
 
                     }
-                        await DisplayAlert("Scanned Infos", "After while loop " + counter, "OK");
+                        //await DisplayAlert("Scanned Infos", "After while loop " + counter, "OK");
 
 
                     scrollView.Content = grid;

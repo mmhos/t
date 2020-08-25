@@ -97,7 +97,8 @@ namespace t
 				var rootPage = Navigation.NavigationStack.FirstOrDefault ();
 				if (rootPage != null) {
 					App.IsUserLoggedIn = false;
-					Navigation.InsertPageBefore (new MainPage (), Navigation.NavigationStack.First ());
+					await DisplayAlert("Sign Up Successful", "Please verify your email to use the app", "OK");
+					Navigation.InsertPageBefore (new LoginPage (), Navigation.NavigationStack.First ());
 					await Navigation.PopToRootAsync ();
 				}
 			} else {

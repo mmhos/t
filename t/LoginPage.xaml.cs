@@ -10,7 +10,7 @@ namespace t
 		{
 			
 			InitializeComponent ();
-			
+			gloc();
 			
 
 
@@ -66,8 +66,12 @@ namespace t
 				if (location != null)
 				{
 					gloca.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}";
-					 //Console.WriteLine($"Latitude: {location.Latitude}");
-					Console.WriteLine("jchjjhfkhfkh");
+					//Console.WriteLine($"Latitude: {location.Latitude}");
+					//Console.WriteLine("jchjjhfkhfkh");
+					gloca.Text = "Current Location ";
+					longitude.Text = "Longitude"+location.Latitude.ToString();
+					latitude.Text = "Latitude"+ location.Latitude.ToString();
+
 				}
 			}
 			catch (FeatureNotSupportedException fnsEx)

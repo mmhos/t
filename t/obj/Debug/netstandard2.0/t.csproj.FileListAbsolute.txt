@@ -39,3 +39,4 @@ C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\ImageTest.xaml.g.cs
 C:\Users\solari-1\source\repos\t\t\bin\Debug\netstandard2.0\Mono.Android.dll
 C:\Users\solari-1\source\repos\t\t\bin\Debug\netstandard2.0\Mono.Android.pdb
 C:\Users\solari-1\source\repos\t\t\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\solari-1\source\repos\t\t\obj\Debug\netstandard2.0\fq.xaml.g.cs

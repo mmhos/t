@@ -12,6 +12,10 @@
 		<StackLayout x:Name="tabs" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <Label Text=" You are accessing the inventory from " />
             <Label x:Name="gloca" Text="Can't access GeoLocation" />
+            <Label x:Name="longitude" Text="" />
+            <Label x:Name="latitude" Text="" />
+            
+            
 			<Label Text="Username" />
 			<Entry x:Name="usernameEntry" Placeholder="username" />
 			<Label Text="Password" />

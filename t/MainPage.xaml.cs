@@ -34,6 +34,7 @@ namespace t
         }
         async void Add_Clicked(object sender, EventArgs e)
         {
+            Constants.branch = "Transfer";
             await Navigation.PushAsync(new adit());
             //Navigation.InsertPageBefore(new adit(), this);
             //await Navigation.PopAsync();

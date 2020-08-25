@@ -149,25 +149,56 @@ namespace t
 
             "Metro Park" };
 
-                            var dest = await DisplayActionSheet("Select the transfer destination", "Abort the transfer", "x", destination);
+                            
                             DBConnect co = new DBConnect();
 
                             if (co.OpenConnection() == true)
                             {
                                 if (Constants.branch == "Transfer")
                                 {
+                                    var dest = await DisplayActionSheet("Select the transfer destination", "Abort the transfer", "x", destination);
                                     string query = "Update inventory Set flquantity = flquantity-1 where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
                                     var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                   // //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
                                     cmd.ExecuteNonQuery();
+                                     query = "SELECT * FROM inventory  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                     cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                     var reader = cmd.ExecuteReader();
+                                    var coun = 0;
 
-                                    query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
-                                    cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
-                                    cmd.ExecuteNonQuery();
-                                    //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
+                                    while (reader.Read())
+                                    {
+                                        coun = coun + 1;
 
 
+                                    }
+                                    await DisplayAlert("Scanned Infos",coun.ToString(), "OK");
+                                    if (coun > 0)
+                                    {
+                                        query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                        cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                        ////await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                        cmd.ExecuteNonQuery();
+                                        //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
+
+                                    }
+                                    else
+                                    {
+                                        string sn = await DisplayPromptAsync("Required info", "Enter the shelf number");
+                                        string sc = await DisplayPromptAsync("Required info", "Enter the shelf column number");
+                                        string sr = await DisplayPromptAsync("Required info", "Enter the shelf row number");
+                                        string sd = await DisplayPromptAsync("Required info", "Enter the shelf depth");
+                                        // string emp = await DisplayPromptAsync("Required info", "Type your name?");
+
+                                        query = query = " INSERT INTO inventory (fllocation,flItem,fldesc,flsolarinumb,shelfNumber,shelfColumn,shelfRow,shelfDepth,flquantity) VALUES('" + dest + "', '" + qrdata[1] + "', '" + qrdata[2] + "', '" + qrdata[0] + "', " + sn + ", " + sc + ", " + sr + ", " + sd + "," + 1 + ")";
+                                        cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                        // //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                        cmd.ExecuteNonQuery();
+                                        co.connection.Close();
+
+
+
+                                    }
                                 }
                                 else
                                 {
@@ -197,15 +228,16 @@ namespace t
 
                                             query = query = " INSERT INTO inventory (fllocation,flItem,fldesc,flsolarinumb,shelfNumber,shelfColumn,shelfRow,shelfDepth,flquantity) VALUES('" + s + "', '" + qrdata[1] + "', '" + qrdata[2] + "', '" + qrdata[0] + "', " + sn + ", " + sc + ", " + sr + ", " + sd + "," + 1 + ")";
                                             cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                            await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                           // //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
                                             cmd.ExecuteNonQuery();
                                             co.connection.Close();
+                                            Constants.branch = "";
                                         }
                                         else
                                         {
                                             query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
                                             cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                            await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                            ////await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
                                             cmd.ExecuteNonQuery();
                                             co.connection.Close();
 
@@ -318,16 +350,11 @@ namespace t
                                 co.connection.Close();
 
                             }
-
+                            possibleLocations.Remove("Please select item location");
+                            
                             var s = await DisplayActionSheet("Select the current location of the item ", "Abort the transfer", "x", possibleLocations.ToArray());
                             if (s == "Abort the transfer") { await Navigation.PushAsync(new adit()); return; }
-                            string[] destination = { "New York", "Jamaica","Warehouse", "Atlantic Terminal", "Newark","Trenton",
-
-
-
-
-
-            "NJT NY",
+                            string[] destination = { "New York", "Jamaica","Warehouse", "Atlantic Terminal", "Newark","Trenton","NJT NY",
 
 
 
@@ -372,18 +399,57 @@ namespace t
                                 {
                                     string query = "Update inventory Set flquantity = flquantity-1 where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
                                     var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                    //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
                                     cmd.ExecuteNonQuery();
+                                     query = "SELECT * FROM inventory  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                     cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                    var reader = cmd.ExecuteReader();
+                                    var coun = 0;
 
-                                    query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
-                                    cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                    await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
-                                    cmd.ExecuteNonQuery();
-                                    //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
+                                    while (reader.Read())
+                                    {
+                                        coun = coun + 1;
 
+                                    }
+                                    co.connection.Close();
+                                    co = new DBConnect();
+                                    co.OpenConnection();
+                                    if (coun == 0)
+                                    {
+                                        var sn = await DisplayPromptAsync("Required info", "Enter the shelf number", accept: "Ok", cancel: "Cancel");
+                                        // await DisplayAlert("Scanned",sn,"ok");
+                                        var isnull = string.IsNullOrEmpty(sn);
+                                        //await DisplayAlert("Scanned", "The value entered is "+ isnull+ isnull.GetType(), "ok");
+                                        if (isnull) { await Navigation.PushAsync(new adit()); return; }
+                                        var sc = await DisplayPromptAsync("Required info", "Enter the shelf column number", "Ok", "Cancel");
+                                        isnull = string.IsNullOrEmpty(sc);
+                                        if (isnull) { await Navigation.PushAsync(new adit()); return; }
 
+                                        var sr = await DisplayPromptAsync("Required info", "Enter the shelf row number", "Ok", "Cancel");
+                                        isnull = string.IsNullOrEmpty(sr);
+                                        if (isnull) { await Navigation.PushAsync(new adit()); return; }
+                                        var sd = await DisplayPromptAsync("Required info", "Enter the shelf depth", "Ok", "Cancel");
+                                        isnull = string.IsNullOrEmpty(sd);
+                                        if (isnull) { await Navigation.PushAsync(new adit()); return; };
+
+                                        query = query = " INSERT INTO inventory (fllocation,flItem,fldesc,flsolarinumb,shelfNumber,shelfColumn,shelfRow,shelfDepth,flquantity) VALUES('" + dest + "', '" + qrdata[1] + "', '" + qrdata[2] + "', '" + qrdata[0] + "', " + sn + ", " + sc + ", " + sr + ", " + sd + "," + 1 + ")";
+                                        cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                        //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                        cmd.ExecuteNonQuery();
+                                        co.connection.Close();
+                                    }
+                                    else
+                                    {
+                                        query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + dest + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
+                                        cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
+                                        //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                        cmd.ExecuteNonQuery();
+                                        //string[] values = { "fllocation", "flagency", "flcond", "flsolarinumb", "flmodel", "fldesc" };
+                                    }
+                                        Constants.branch = "";
+                                    
                                 }
-                                else
+                                else if (Constants.branch == "Add")
                                 {
 
                                     {
@@ -403,19 +469,26 @@ namespace t
                                         co.OpenConnection();
                                         if (coun == 0)
                                         {
-                                            string sn = await DisplayPromptAsync("Required info", "Enter the shelf number","Ok","Cancel");
-                                            if (sn == "Cancel") { await Navigation.PushAsync(new adit()); return; }
-                                            string sc = await DisplayPromptAsync("Required info", "Enter the shelf column number","Ok", "Cancel");
-                                            if (sc == "Cancel") { await Navigation.PushAsync(new adit()); return; }
-                                            string sr = await DisplayPromptAsync("Required info", "Enter the shelf row number","Ok", "Cancel");
-                                            if (sr == "Cancel") { await Navigation.PushAsync(new adit()); return; }
-                                            string sd = await DisplayPromptAsync("Required info", "Enter the shelf depth","Ok", "Cancel");
-                                            if (sd == "Cancel") { await Navigation.PushAsync(new adit()); return; }
+                                            var sn = await DisplayPromptAsync("Required info", "Enter the shelf number", accept: "Ok", cancel: "Cancel");
+                                           // await DisplayAlert("Scanned",sn,"ok");
+                                            var isnull = string.IsNullOrEmpty(sn);
+                                            //await DisplayAlert("Scanned", "The value entered is "+ isnull+ isnull.GetType(), "ok");
+                                            if (isnull) { await Navigation.PushAsync(new adit()); return; }
+                                            var sc = await DisplayPromptAsync("Required info", "Enter the shelf column number","Ok", "Cancel");
+                                             isnull = string.IsNullOrEmpty(sc);
+                                            if (isnull) { await Navigation.PushAsync(new adit()); return; }
+
+                                            var sr = await DisplayPromptAsync("Required info", "Enter the shelf row number","Ok", "Cancel");
+                                            isnull = string.IsNullOrEmpty(sr);
+                                            if (isnull) { await Navigation.PushAsync(new adit()); return; }
+                                            var sd = await DisplayPromptAsync("Required info", "Enter the shelf depth","Ok", "Cancel");
+                                            isnull = string.IsNullOrEmpty(sd);
+                                            if (isnull) { await Navigation.PushAsync(new adit()); return; }
                                             // string emp = await DisplayPromptAsync("Required info", "Type your name?");
 
                                             query = query = " INSERT INTO inventory (fllocation,flItem,fldesc,flsolarinumb,shelfNumber,shelfColumn,shelfRow,shelfDepth,flquantity) VALUES('" + s + "', '" + qrdata[1] + "', '" + qrdata[2] + "', '" + qrdata[0] + "', " + sn + ", " + sc + ", " + sr + ", " + sd + "," + 1 + ")";
                                             cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                            await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                            //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
                                             cmd.ExecuteNonQuery();
                                             co.connection.Close();
                                         }
@@ -423,14 +496,14 @@ namespace t
                                         {
                                             query = "Update inventory Set flquantity = flquantity+1  where fllocation = '" + s + "' AND flItem ='" + qrdata[1] + "' AND flsolarinumb = " + qrdata[0] + " AND fldesc = '" + qrdata[2] + "'";
                                             cmd = new MySql.Data.MySqlClient.MySqlCommand(query, co.connection);
-                                            await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
+                                            //await DisplayAlert("Scanned Infos", cmd.CommandText, "OK");
                                             cmd.ExecuteNonQuery();
                                             co.connection.Close();
 
 
                                         }
                                         await DisplayAlert("Number of items", coun.ToString(), "OK");
-                                        Constants.branch = "Transfer";
+                                        Constants.branch = "";
                                     }
 
 
